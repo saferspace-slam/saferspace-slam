@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --color-normal-text: black;
+  --color-special-text: var(--color-green-800);
+}
