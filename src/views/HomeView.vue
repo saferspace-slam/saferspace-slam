@@ -32,7 +32,7 @@ const startOfContent = ref();
       <img src="@/assets/leo_home.jpg" class="lg:w-100" alt="">
 
       <p class="text-lg mt-10">
-        Du hast Lust auf einen ganz besonderen literarischen Abend voller Emotionen, gesprochener Worte und queeren
+        Du hast Lust auf einen ganz besonderen literarischen Abend voller Emotionen, gesprochener Worte und queerer
         Gedanken? <br><br>
 
         Dann ist dieser Poetryslam genau die richtige Veranstaltung für dich. Hier erwarten dich Slamer:innen, die sich
