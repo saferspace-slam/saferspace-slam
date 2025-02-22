@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 import Instagram from './components/Instagram.vue';
 import { store } from './store';
 
@@ -11,9 +11,29 @@ window.addEventListener('scroll', () => {
 });
 
 const navActive = ref(false);
+const navFullyOpen = ref(false);
+
+// watch(navActive, () => setTimeout(() => navFullyOpen.value = navActive.value, 500))
+
 const route = useRoute();
 const onHome = computed(() => route.name === 'home');
 const darkenNav = computed(() => onHome.value && !store.scrolled && !navActive.value);
+
+const routes = [
+  ["/", "Startseite"],
+  ["/veranstaltungen", "Veranstaltungen"],
+  ["/kontakt", "Kontakt"]
+]
+
+const mobileNav = ref();
+watch(navActive, () => {
+  if (navActive.value) {
+    mobileNav.value.style.marginTop = 0;
+  } else {
+    console.log(mobileNav.value.offsetHeight);
+    mobileNav.value.style.marginTop = `-${mobileNav.value.offsetHeight}px`;
+  }
+})
 
 const menuItemClasses = "transition-transform duration-500 text-menu-item hover:opacity-80 hover:border-b-1 hover:border-b-white/80"
 </script>
@@ -28,7 +48,7 @@ const menuItemClasses = "transition-transform duration-500 text-menu-item hover:
         :class="{ 'lg:py-5': store.scrolled, 'lg:py-7': !store.scrolled }">
 
         <div
-          class="z-10 transition-colors duration-500 not-lg:py-4 px-5 flex justify-between items-center w-full not-lg:bg-menu-background"
+          class="z-10 gap-6 transition-colors duration-500 not-lg:py-4 px-5 flex justify-between items-center w-full not-lg:bg-menu-background"
           :class="{ 'not-hover:not-lg:bg-transparent': darkenNav }">
           <RouterLink to="/">
             <img src="@/assets/logo_white.svg" class="h-5" />
@@ -47,12 +67,16 @@ const menuItemClasses = "transition-transform duration-500 text-menu-item hover:
           </button>
         </div>
 
-        <nav
-          class="transition-all duration-500 h-full not-lg:py-7 px-5 gap-7 justify-end flex-col lg:flex-row flex lg:items-center not-lg:bg-menu-background"
-          :class="{ '!flex !not-lg:translate-y-0 not-lg:opacity-100': navActive, 'not-lg:-translate-y-full not-lg:opacity-0': !navActive }">
-          <RouterLink :class="menuItemClasses" to="/">Startseite</RouterLink>
-          <RouterLink :class="menuItemClasses" to="/veranstaltungen">Veranstaltungen</RouterLink>
-          <RouterLink :class="menuItemClasses" to="/kontakt">Kontakt</RouterLink>
+        <nav ref="mobileNav"
+          class="lg:hidden transition-all duration-500 h-full py-7 px-5 gap-7 justify-end flex-col flex bg-menu-background"
+          :class="{ '!flex opacity-100': navActive, 'opacity-0': !navActive }">
+          <RouterLink v-for="route in routes" :class="menuItemClasses" :to="route[0]" @click="navActive = false">{{
+            route[1] }}</RouterLink>
+        </nav>
+
+        <nav class="not-lg:hidden transition-all duration-500 h-full px-5 gap-7 justify-end flex-row flex items-center">
+          <RouterLink v-for="route in routes" :class="menuItemClasses" :to="route[0]" @click="navActive = false">{{
+            route[1] }}</RouterLink>
         </nav>
 
       </div>
