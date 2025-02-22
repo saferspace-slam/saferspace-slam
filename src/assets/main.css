@@ -1,1 +1,10 @@
 @import './base.css';
+
+.link-colorize {
+    filter: invert(15%) sepia(45%) saturate(3028%) hue-rotate(302deg) brightness(95%) contrast(97%);
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
