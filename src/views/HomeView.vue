@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Content from '@/components/Content.vue';
 import Instagram from '@/components/Instagram.vue';
+import InstagramInline from '@/components/InstagramInline.vue';
 import PageHeading from '@/components/PageHeading.vue';
 import { store } from '@/store';
 import { ref } from 'vue';
@@ -40,11 +41,7 @@ const startOfContent = ref();
         lyrische und prosaische, laute und leise Texte. Ein Safespace für alle, die gerade einen brauchen. <br><br>
 
         Wir bemühen uns um möglichst viel Barrierefreiheit, genauere Infos findet ihr 
-        auf&nbsp;&nbsp;<a class="!no-underline whitespace-nowrap" href="https://www.instagram.com/saferspace_slam/" target="_blank">
-          <img src="@/assets/instagram_logo_simple.svg"
-            class="link-colorize inline relative top-[-0.9px] h-5 mr-1" />
-          <span class="text-link">saferspace_slam</span>
-        </a>.
+        auf&nbsp;&nbsp;<InstagramInline/>.
 
       </p>
     </div>
