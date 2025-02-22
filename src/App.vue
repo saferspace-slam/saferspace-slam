@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { computed, reactive, ref, watch } from 'vue';
+import { computed, onMounted, reactive, ref, watch } from 'vue';
 import Instagram from './components/Instagram.vue';
 import { store } from './store';
 
@@ -30,10 +30,13 @@ watch(navActive, () => {
   if (navActive.value) {
     mobileNav.value.style.marginTop = 0;
   } else {
-    console.log(mobileNav.value.offsetHeight);
     mobileNav.value.style.marginTop = `-${mobileNav.value.offsetHeight}px`;
   }
+});
+onMounted(() => {
+  mobileNav.value.style.marginTop = `-${mobileNav.value.offsetHeight}px`;
 })
+
 
 const menuItemClasses = "transition-transform duration-500 text-menu-item hover:opacity-80 hover:border-b-1 hover:border-b-white/80"
 </script>
@@ -67,7 +70,7 @@ const menuItemClasses = "transition-transform duration-500 text-menu-item hover:
           </button>
         </div>
 
-        <nav ref="mobileNav" 
+        <nav ref="mobileNav"
           class="lg:hidden transition-all duration-500 h-full py-7 px-5 gap-7 justify-end flex-col flex bg-menu-background"
           :class="{ '!flex opacity-100': navActive, 'opacity-0': !navActive }">
           <RouterLink v-for="route in routes" :class="menuItemClasses" :to="route[0]" @click="navActive = false">{{
