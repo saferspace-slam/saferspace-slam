@@ -39,7 +39,7 @@ const menuItemClasses = "transition-transform duration-500 text-menu-item hover:
 </script>
 
 <template>
-  <div class="flex flex-col justify-between min-h-screen">
+  <div class="flex flex-col justify-between min-h-screen" @click="navActive = false">
     <header class="transition-colors duration-500 z-50 w-full top-0 lg:bg-menu-background flex justify-center"
       :class="{ 'not-hover:lg:bg-transparent': darkenNav, 'fixed': onHome, 'sticky': !onHome }">
 
@@ -54,7 +54,7 @@ const menuItemClasses = "transition-transform duration-500 text-menu-item hover:
             <img src="@/assets/logo_white.svg" class="h-5" />
           </RouterLink>
 
-          <button class="mr-3 lg:hidden cursor-pointer" @click="navActive = !navActive">
+          <button class="mr-3 lg:hidden cursor-pointer" @click.stop="navActive = !navActive">
             <svg v-if="navActive" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
               fill="#e8eaed">
               <path
@@ -67,7 +67,7 @@ const menuItemClasses = "transition-transform duration-500 text-menu-item hover:
           </button>
         </div>
 
-        <nav ref="mobileNav"
+        <nav ref="mobileNav" 
           class="lg:hidden transition-all duration-500 h-full py-7 px-5 gap-7 justify-end flex-col flex bg-menu-background"
           :class="{ '!flex opacity-100': navActive, 'opacity-0': !navActive }">
           <RouterLink v-for="route in routes" :class="menuItemClasses" :to="route[0]" @click="navActive = false">{{
