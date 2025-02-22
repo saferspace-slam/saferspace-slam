@@ -54,7 +54,7 @@ async function submitForm() {
         <PageHeading>Kontakt</PageHeading>
         <div class="flex flex-col gap-2">
             <p class="mb-4"> Hast du Fragen, Ideen, Anmerkungen, Kritik oder Lob?</p>
-            <div class="flex items-center gap-[6px]">
+            <div class="flex items-center gap-2">
                 <div class="flex justify-center w-[30px] shrink-0">
 
                     <a href="mailto:kontakt@saferspace-slam.de">
