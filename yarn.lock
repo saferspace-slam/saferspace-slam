@@ -767,6 +767,11 @@
   dependencies:
     undici-types "~6.20.0"
 
+"@types/web-bluetooth@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@types/web-bluetooth/-/web-bluetooth-0.0.20.tgz#f066abfcd1cbe66267cdbbf0de010d8a41b41597"
+  integrity sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==
+
 "@typescript-eslint/eslint-plugin@8.24.1":
   version "8.24.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.24.1.tgz#d104c2a6212304c649105b18af2c110b4a1dd4ae"
@@ -1059,6 +1064,37 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@vue/tsconfig/-/tsconfig-0.7.0.tgz#67044c847b7a137b8cbfd6b23104c36dbaf80d1d"
   integrity sha512-ku2uNz5MaZ9IerPPUyOHzyjhXoX2kVJaVf7hL315DC17vS6IiZRmmCPfggNbU16QTvM80+uYYy3eYJB59WCtvg==
+
+"@vueuse/components@^12.7.0":
+  version "12.7.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/components/-/components-12.7.0.tgz#ed765da2b8708c4a566763cc49868d4a6a1928af"
+  integrity sha512-LbaKPOx9sTPRxI8ymJt3VCm2CifmC432yaXxCGbjkuKIh2jyNlXvE7sGrLm7kbC7WkBJnUXzm3K/cI1pIE8ueQ==
+  dependencies:
+    "@vueuse/core" "12.7.0"
+    "@vueuse/shared" "12.7.0"
+    vue "^3.5.13"
+
+"@vueuse/core@12.7.0", "@vueuse/core@^12.7.0":
+  version "12.7.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-12.7.0.tgz#b9c3880e9c01d9db86029c6a58412f1b1922497e"
+  integrity sha512-jtK5B7YjZXmkGNHjviyGO4s3ZtEhbzSgrbX+s5o+Lr8i2nYqNyHuPVOeTdM1/hZ5Tkxg/KktAuAVDDiHMraMVA==
+  dependencies:
+    "@types/web-bluetooth" "^0.0.20"
+    "@vueuse/metadata" "12.7.0"
+    "@vueuse/shared" "12.7.0"
+    vue "^3.5.13"
+
+"@vueuse/metadata@12.7.0":
+  version "12.7.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-12.7.0.tgz#17a263927204962ec045095c83f62c81db085a46"
+  integrity sha512-4VvTH9mrjXqFN5LYa5YfqHVRI6j7R00Vy4995Rw7PQxyCL3z0Lli86iN4UemWqixxEvYfRjG+hF9wL8oLOn+3g==
+
+"@vueuse/shared@12.7.0":
+  version "12.7.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-12.7.0.tgz#0c573789069818a2e25ddae3ab64b536c614537b"
+  integrity sha512-coLlUw2HHKsm7rPN6WqHJQr18WymN4wkA/3ThFaJ4v4gWGWAQQGK+MJxLuJTBs4mojQiazlVWAKNJNpUWGRkNw==
+  dependencies:
+    vue "^3.5.13"
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -1897,6 +1933,11 @@ magic-string@^0.30.11, magic-string@^0.30.4:
   integrity sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.5.0"
+
+material-symbols@^0.28.2:
+  version "0.28.2"
+  resolved "https://registry.yarnpkg.com/material-symbols/-/material-symbols-0.28.2.tgz#46edace0ab9533d0c7238bde031491a9948f6c80"
+  integrity sha512-JLK+Bgtfg5Dn9V2WYk6lSwmxciNNF2zmqc/V8MLmH0K9LttUhPCaauJzrS1Vw3mJPs/Tyfi/tszynNRX6nWQOA==
 
 memorystream@^0.3.1:
   version "0.3.1"
