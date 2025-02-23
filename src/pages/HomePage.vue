@@ -41,7 +41,7 @@ const startOfContent = ref();
         lyrische und prosaische, laute und leise Texte. Ein Safespace für alle, die gerade einen brauchen. <br><br>
 
         Wir bemühen uns um möglichst viel Barrierefreiheit, genauere Infos findet ihr 
-        auf&nbsp;&nbsp;<InstagramInline/>.
+        auf <InstagramInline/>.
 
       </p>
     </div>
